@@ -13,4 +13,5 @@ def home():
     return render_template('proekt.html', gd=dict_grades)
 
 
-app.run()
+if __name__ == '__main__':
+    app.run()
