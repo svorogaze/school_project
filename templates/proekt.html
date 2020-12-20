@@ -19,8 +19,8 @@
 </div>
 <p>
 <h2>Итоговые оценки за триместр</h2>
-<h3>Математика: {{ sr_m }}</h3>
-<h3>Русский язык: 4 {{ sr_r }}</h3>
+<h3>Математика: {{ sr_m }} </h3>
+<h3>Русский язык: {{ sr_r }} </h3>
 <script>
 var ctx = document.getElementById('myChart');
 var myChart = new Chart(ctx, {
@@ -29,7 +29,7 @@ var myChart = new Chart(ctx, {
         labels: ['Математика', 'Русский язык', 'Информатика', 'Геометрия', 'Биология', 'География'],
         datasets: [{
             label: ' всего оценок',
-            data: [{{ gd['математика']|length }}, {{ gd['русский']|length }}, {{ gd['информатика']|length }}, {{ gd['геометрия']|length }}, {{ gd['биология']|length }},{{ gd['география']|length }}],
+            data: [{{ gd['математика'] | length }}, {{ gd['русский'] | length }}, {{ gd['информатика']|length }}, {{ gd['геометрия']|length }}, {{ gd['биология']|length }},{{ gd['география']|length }}],
             backgroundColor: [
                 'rgb(255, 99, 132, 0.2)',
                 'rgb(54, 162, 235, 0.2)',
@@ -71,7 +71,7 @@ var Pie = new Chart(ctx, {
         labels: ['5','4','3','2'],
         datasets: [{
             label: ' всего оценок',
-            data: [{{ gd['математика'] | select('equalto','5') | list | length }},{{ gd['математика'] | select('equalto','4') | list | length }},{{ gd['математика'] | select('equalto','3') | list | length }},{{ gd['математика'] | select('equalto','2') | list | length }}],
+            data: [{{ gd['математика'] | select('equalto',5) | list | length }},{{ gd['математика'] | select('equalto',4) | list | length }},{{ gd['математика'] | select('equalto',3) | list | length }},{{ gd['математика'] | select('equalto',2) | list | length }}],
             backgroundColor: [
                 'rgb(255, 99, 132, 0.2)',
                 'rgb(54, 162, 235, 0.2)',

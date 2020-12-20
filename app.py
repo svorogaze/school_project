@@ -5,7 +5,7 @@ dict_grades = {}
 file = open('grades.txt', 'r', encoding='utf-8')
 for i in file.readlines():
     splitted = i.split()
-    dict_grades[splitted[0]] = splitted[1:]
+    dict_grades[splitted[0]] = list(map(int,splitted[1:]))
 sr_math = round(sum(dict_grades['математика']) / len(dict_grades['математика']), 1)
 sr_russian = round(sum(dict_grades['математика']) / len(dict_grades['математика']), 1)
 
